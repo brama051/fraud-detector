@@ -6,7 +6,7 @@ import java.time.LocalDateTime
 
 class TransactionConverterTest extends Specification {
 
-    def "csv string should be successfully parsed"() {
+    def "CSV string should be successfully parsed"() {
 
         given:
         def csvTransaction = '10d7ce2f43e35fa57d1bbf8b1e2, 2014-04-29T13:15:54, 10.00'

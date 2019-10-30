@@ -8,7 +8,7 @@ import java.time.LocalDateTime
 class TransactionValidatorTest extends Specification {
 
     @Unroll
-    def "when transaction #scenario, it not considered valid"() {
+    def "When transaction #scenario, it is not considered valid"() {
 
         expect:
         !TransactionValidator.isValid(new Transaction(hash, dateTime, total))
@@ -24,7 +24,7 @@ class TransactionValidatorTest extends Specification {
     }
 
     @Unroll
-    def "transaction with #hash, #dateTime and #total should be considered valid"() {
+    def "Transaction with #hash, #dateTime and #total is considered valid"() {
 
         expect:
         TransactionValidator.isValid(new Transaction(hash, dateTime, total))
@@ -36,8 +36,7 @@ class TransactionValidatorTest extends Specification {
         '10d7ce2f43e35fa57d1bbf8b1e0' | LocalDateTime.parse('2019-08-01T12:12:12') | BigDecimal.valueOf(-10)
     }
 
-    @Unroll
-    def "csv entry validation basic validation test"() {
+    def "CSV entry validation basic validation test"() {
         expect:
         TransactionValidator.isValidCsv(csvRecord) == expectedOutcome
 
